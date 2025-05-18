@@ -1,0 +1,55 @@
+{
+  "name": "create-cosey",
+  "version": "0.1.0",
+  "description": "快速搭建 Cosey 项目",
+  "type": "module",
+  "packageManager": "pnpm@10.9.0",
+  "bin": {
+    "create-cosey": "bundle.js"
+  },
+  "files": [
+    "bundle.js",
+    "template",
+    "!template/**/node_modules/.bin/*"
+  ],
+  "engines": {
+    "node": ">=v20.0.0"
+  },
+  "scripts": {
+    "prettier": "prettier . --write",
+    "prettier:check": "prettier . --check",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "build": "rolldown -c rolldown.config.ts"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.10.1",
+    "@eslint/js": "^9.27.0",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/ejs": "^3.1.5",
+    "@types/node": "^22.15.18",
+    "ejs": "^3.1.10",
+    "eslint": "^9.27.0",
+    "eslint-plugin-vue": "^10.1.0",
+    "globals": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "picocolors": "^1.1.1",
+    "prettier": "3.5.3",
+    "rolldown": "1.0.0-beta.8",
+    "typescript-eslint": "^8.32.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sutras/create-cosey.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "author": "wuzhitao",
+  "license": "MIT"
+}

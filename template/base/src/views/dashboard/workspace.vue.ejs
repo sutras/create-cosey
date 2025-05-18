@@ -1,0 +1,26 @@
+<template>
+  <co-container>
+    <el-card shadow="never">
+      <div class="flex">
+        <el-avatar
+          :size="80"
+          class="flex-none"
+          :src="userStore.userInfo?.avatar"
+        >
+          <co-icon name="carbon:user" />
+        </el-avatar>
+        <div class="ml-4">
+          <div class="text-lg font-bold">
+            早安，“{{ userStore.userInfo?.nickname }}”， 开始您一天的工作吧！
+          </div>
+        </div>
+      </div>
+    </el-card>
+  </co-container>
+</template>
+
+<script lang="ts" setup>
+import { useUserStore } from 'cosey';
+
+const userStore = useUserStore();
+</script>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 150 150"
+>
+  <defs>
+    <linearGradient
+      id="linearGradient-1"
+      x1="121.14"
+      y1="47.34"
+      x2="39.29"
+      y2="96.41"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#fa8e7d" />
+      <stop offset=".5" stop-color="#f74a5c" />
+      <stop offset="1" stop-color="#f51d2c" />
+    </linearGradient>
+    <linearGradient
+      id="linearGradient-2"
+      x1="75"
+      y1="75"
+      x2="75"
+      y2="0"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset=".25" stop-color="#2ec7ff" />
+      <stop offset=".5" stop-color="#4187ec" />
+    </linearGradient>
+    <linearGradient
+      id="linearGradient-3"
+      x1="75"
+      y1="75"
+      x2="75"
+      y2="150"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset=".25" stop-color="#2ec7ff" />
+      <stop offset=".5" stop-color="#4187ec" />
+    </linearGradient>
+    <linearGradient
+      id="linearGradient-4"
+      x1="0"
+      y1="75"
+      x2="150"
+      y2="75"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#4285eb" />
+      <stop offset=".53" stop-color="#4187ec" />
+      <stop offset=".75" stop-color="#408aed" />
+      <stop offset="1" stop-color="#2ec7ff" />
+    </linearGradient>
+  </defs>
+  <rect
+    x="50"
+    y="50"
+    width="50"
+    height="50"
+    rx="9.55"
+    ry="9.55"
+    style="fill: url(#linearGradient-1); stroke-width: 0px"
+  />
+  <path
+    d="M125,0H25C11.19,0,0,11.19,0,25v50h25v-40.45c0-5.27,4.27-9.55,9.55-9.55h80.9c5.27,0,9.55,4.27,9.55,9.55v15.06c0,6.16,4.29,11.69,10.37,12.71,7.8,1.31,14.63-4.75,14.63-12.32v-25c0-13.81-11.19-25-25-25Z"
+    style="fill: url(#linearGradient-2); stroke-width: 0px"
+  />
+  <path
+    d="M136.26,87.56c-6.46.63-11.26,6.33-11.26,12.83v15.06c0,5.27-4.27,9.55-9.55,9.55H34.55c-5.27,0-9.55-4.27-9.55-9.55v-40.45H0v50c0,13.81,11.19,25,25,25h100.01c13.81,0,25-11.19,25-25v-25c0-7.29-6.32-13.17-13.74-12.44Z"
+    style="fill: url(#linearGradient-3); stroke-width: 0px"
+  />
+  <path
+    d="M150,50v-25.02c0-13.74-11.24-24.98-24.98-24.98H24.98C11.24,0,0,11.24,0,24.98v100.04c0,13.74,11.24,24.98,24.98,24.98h100.04c13.74,0,24.98-11.24,24.98-24.98v-25.02c0,13.75-11.25,25-25,25H50s-.01,0-.02,0h-15.43c-5.25,0-9.55-4.3-9.55-9.55V34.55c0-5.25,4.3-9.55,9.55-9.55h15.43s.01,0,.02,0h75c13.75,0,25,11.25,25,25Z"
+    style="fill: url(#linearGradient-4); stroke-width: 0px"
+  />
+</svg>

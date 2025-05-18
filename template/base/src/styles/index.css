@@ -1,0 +1,19 @@
+/* tailwindcss */
+@import 'tailwindcss';
+
+/* initialized */
+::-ms-reveal {
+  display: none;
+}
+
+:-webkit-autofill {
+  transition-property: background-color;
+  transition-delay: 86400s;
+}
+
+body {
+  font-size: var(--co-font-size);
+  font-family: var(--co-font-family);
+  color: var(--co-color-text);
+  overflow-x: hidden;
+}
