@@ -155,7 +155,14 @@ async function bootstrap() {
   };
   render("base");
 
-  const packageManager = "pnpm";
+  const userAgent = process.env.npm_config_user_agent ?? "";
+  const packageManager = /pnpm/.test(userAgent)
+    ? "pnpm"
+    : /yarn/.test(userAgent)
+      ? "yarn"
+      : /bun/.test(userAgent)
+        ? "bun"
+        : "npm";
 
   let outroMessage = `项目初始化完成，可执行以下命令：\n\n`;
   if (root !== cwd) {

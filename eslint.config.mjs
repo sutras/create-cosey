@@ -20,5 +20,5 @@ export default defineConfig([
     files: ["**/*.vue"],
     languageOptions: { parserOptions: { parser: tseslint.parser } },
   },
-  globalIgnores(["template/**/*"]),
+  globalIgnores(["**/template/**", "**/node_modules/**", "bundle.js"]),
 ]);

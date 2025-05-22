@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "快速搭建 Cosey 项目",
   "type": "module",
-  "packageManager": "pnpm@10.9.0",
   "bin": {
     "create-cosey": "bundle.js"
   },
@@ -20,10 +19,13 @@
     "prettier:check": "prettier . --check",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
-    "build": "rolldown -c rolldown.config.ts"
+    "build": "rolldown -c rolldown.config.ts",
+    "eslint": "eslint . --fix"
   },
   "devDependencies": {
     "@clack/prompts": "^0.10.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.27.0",
     "@tsconfig/node22": "^22.0.1",
     "@types/ejs": "^3.1.5",
@@ -40,7 +42,10 @@
     "typescript-eslint": "^8.32.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "eslint . --fix",
+      "prettier . --write"
+    ]
   },
   "repository": {
     "type": "git",
