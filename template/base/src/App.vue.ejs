@@ -1,5 +1,5 @@
 <template>
-  <RootConfigProvider>
+  <RootConfigProvider :locale="coseyLocale">
     <router-view></router-view>
   </RootConfigProvider>
 </template>
@@ -7,6 +7,7 @@
 <script setup lang="ts">
 import { RootConfigProvider } from 'cosey';
 import { onMounted } from 'vue';
+import { coseyLocale } from '@/locale';
 
 // 移除 index.html 的加载动画
 onMounted(() => {

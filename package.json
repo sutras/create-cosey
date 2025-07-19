@@ -1,6 +1,6 @@
 {
   "name": "create-cosey",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "快速搭建 Cosey 项目",
   "type": "module",
   "bin": {
@@ -50,10 +50,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sutras/create-cosey.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
   },
   "author": "wuzhitao",
   "license": "MIT"

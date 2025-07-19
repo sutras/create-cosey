@@ -67,9 +67,7 @@
       (() => {
         const colorScheme = localStorage.getItem('colorScheme') || 'auto';
 
-        const isDark = window.matchMedia(
-          '(prefers-color-scheme: dark)',
-        ).matches;
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         if (colorScheme === 'auto' ? isDark : colorScheme === 'dark') {
           document.documentElement.classList.add('dark');

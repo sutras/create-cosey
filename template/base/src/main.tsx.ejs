@@ -1,4 +1,4 @@
-import './styles/index.css';
+import '@/styles/index.css';
 
 import { createApp } from 'vue';
 import { createCosey } from 'cosey';
@@ -13,6 +13,9 @@ import {
   defineAbility,
 } from '@casl/ability';
 import { ABILITY_TOKEN } from '@casl/vue';
+
+import LayoutLocale from '@/components/layout-locale';
+import { setupI18n } from '@/locale';
 
 import 'virtual:svg-icons-register';
 import { icons as carbonIcons } from '@iconify-json/carbon';
@@ -65,9 +68,28 @@ async function bootstrap() {
       const authority = route.meta?.authority;
       return !authority ? true : authority(ability);
     },
+    slots: {
+      topbarRight() {
+        return (
+          <>
+            <LayoutLocale />
+          </>
+        );
+      },
+      authWidget() {
+        return (
+          <>
+            <LayoutLocale />
+          </>
+        );
+      },
+    }
   });
 
   app.use(cosey);
+
+  // 国际化
+  setupI18n(app);
 
   // 挂载根组件
   app.mount('#app');
