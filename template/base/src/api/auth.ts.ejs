@@ -6,8 +6,8 @@ const Api = {
   ChangePassword: '/auth/change-password',
 };
 
-export const useAuthApi = () =>
-  useRequest().map({
+export const useAuthApi = () => {
+  return useRequest().map({
     login: (http) => async (data: any) => {
       const res = await http.post(Api.Login, data);
       return res.token as string;
@@ -21,3 +21,4 @@ export const useAuthApi = () =>
       return http.post(Api.ChangePassword, data);
     },
   });
+}

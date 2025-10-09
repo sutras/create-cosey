@@ -1,0 +1,66 @@
+/* element-plus 阅读方向 */
+body {
+  .el-form-item__label {
+    padding: 0;
+    padding-inline-end: 12px;
+  }
+
+  .el-button + .el-button {
+    margin-left: 0;
+    margin-inline-start: 12px;
+  }
+
+  .el-tabs--card > .el-tabs__header .el-tabs__item {
+    border-left: none;
+    border-inline-start: 1px solid var(--el-border-color-light);
+  }
+
+  .el-pagination__goto {
+    margin-right: 0;
+    margin-inline-end: 8px;
+  }
+
+  .el-pagination__jump {
+    margin-left: 0;
+    margin-inline-start: var(--el-pagination-item-gap);
+  }
+
+  .el-pagination__sizes,
+  .el-pagination__total {
+    margin-left: 0;
+    margin-inline-start: var(--el-pagination-item-gap);
+  }
+
+  .el-checkbox__label {
+    padding-left: 0;
+    padding-inline-start: 8px;
+  }
+
+  .el-radio {
+    margin-right: 0;
+    margin-inline-end: 30px;
+  }
+
+  .el-radio__label {
+    padding-left: 0;
+    padding-inline-start: 8px;
+  }
+
+  .el-form-item--label-right .el-form-item__label {
+    text-align: end;
+  }
+
+  .el-tabs--card > .el-tabs__header .el-tabs__item .is-icon-close {
+    right: unset;
+    inset-inline-end: -2px;
+  }
+
+  .el-tabs__item .is-icon-close {
+    margin-left: 0;
+    margin-inline-start: 5px;
+  }
+
+  .el-breadcrumb__item {
+    float: inline-start;
+  }
+}

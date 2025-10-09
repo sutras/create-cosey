@@ -7,8 +7,8 @@
 }
 
 :-webkit-autofill {
-  transition-property: background-color;
-  transition-delay: 86400s;
+  transition-property: background-color !important;
+  transition-delay: 86400s !important;
 }
 
 body {
