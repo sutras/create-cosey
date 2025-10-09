@@ -63,4 +63,9 @@ body {
   .el-breadcrumb__item {
     float: inline-start;
   }
+
+  .el-input__prefix-inner > :last-child {
+    margin-right: 0;
+    margin-inline-end: 8px;
+  }
 }
