@@ -1,6 +1,6 @@
 {
   "name": "create-cosey",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "快速搭建 Cosey 项目",
   "type": "module",
   "bin": {

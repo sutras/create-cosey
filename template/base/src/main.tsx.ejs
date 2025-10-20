@@ -16,7 +16,7 @@ import {
 import { ABILITY_TOKEN } from '@casl/vue';
 
 import LayoutLocale from '@/components/layout-locale';
-import { setupI18n } from '@/locale';
+import { setupI18n, i18n } from '@/locale';
 
 import 'virtual:svg-icons-register';
 import { icons as carbonIcons } from '@iconify-json/carbon';
@@ -77,7 +77,7 @@ async function bootstrap() {
         return (
           <div style="width: 47px">
             <Ribbon size={63} breadth={0.6} background={import.meta.env.VITE_ENV_RIBBON_BG}>
-              {import.meta.env.VITE_ENV_RIBBON_NAME}
+              {i18n.global.t(import.meta.env.VITE_ENV_RIBBON_NAME)}
             </Ribbon>
           </div>
         );

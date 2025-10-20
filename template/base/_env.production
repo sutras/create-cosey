@@ -1,1 +1,4 @@
 VITE_BASE_URL=/prod-api
+
+VITE_ENV_RIBBON_NAME=正式服
+VITE_ENV_RIBBON_BG=var(--co-color-primary)

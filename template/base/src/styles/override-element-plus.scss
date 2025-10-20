@@ -10,6 +10,11 @@ body {
     margin-inline-start: 12px;
   }
 
+  .el-button [class*='el-icon'] + span {
+    margin-left: 0;
+    margin-inline-start: 6px;
+  }
+
   .el-tabs--card > .el-tabs__header .el-tabs__item {
     border-left: none;
     border-inline-start: 1px solid var(--el-border-color-light);
