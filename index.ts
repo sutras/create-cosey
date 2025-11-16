@@ -1,6 +1,7 @@
 import { log, isCancel, cancel, intro, text, outro } from "@clack/prompts";
 import { red, green, bold, dim } from "picocolors";
 import fs from "node:fs";
+import latestVersion from "latest-version";
 
 import cliPackageJson from "./package.json" with { type: "json" };
 import { parseArgs } from "node:util";
@@ -19,22 +20,6 @@ async function unwrapPrompt<T>(
     process.exit(0);
   }
   return result;
-}
-
-function canSkipEmptying(dir: string) {
-  if (!fs.existsSync(dir)) {
-    return true;
-  }
-
-  const files = fs.readdirSync(dir);
-  if (files.length === 0) {
-    return true;
-  }
-  if (files.length === 1 && files[0] === ".git") {
-    return true;
-  }
-
-  return false;
 }
 
 function isValidPackageName(projectName: string) {
@@ -122,7 +107,7 @@ async function bootstrap() {
     targetDir = result.projectName = result.packageName = _result.trim();
   }
 
-  if (!canSkipEmptying(targetDir)) {
+  if (fs.existsSync(targetDir)) {
     cancel(red("✖") + ` 当前目录非空`);
     process.exit(0);
   }
@@ -146,6 +131,7 @@ async function bootstrap() {
 
   const dataStore = {
     packageName: result.packageName,
+    coseyVersion: await latestVersion("cosey"),
   };
 
   const templateRoot = fileURLToPath(new URL("./template", import.meta.url));
