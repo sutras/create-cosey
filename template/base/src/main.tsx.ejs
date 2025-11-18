@@ -5,8 +5,8 @@ import { createApp } from 'vue';
 import { createCosey } from 'cosey';
 import App from '@/App.vue';
 import { dynamicRoutes, staticRoutes } from '@/routes';
-import { useUploadApi } from '@/api/common';
-import { useAuthApi } from '@/api/auth';
+import commonApi from '@/api/common';
+import authApi from '@/api/auth';
 
 import {
   AbilityBuilder,
@@ -33,7 +33,7 @@ async function bootstrap() {
   app.provide(ABILITY_TOKEN, ability);
 
   // cosey
-  const cosey = createCosey({
+  launch(app, {
     router: { dynamic: dynamicRoutes, static: staticRoutes },
     http: {
       baseURL: import.meta.env.VITE_BASE_URL,
@@ -45,18 +45,10 @@ async function bootstrap() {
       description: import.meta.env.VITE_APP_DESCRIPTION,
     },
     api: {
-      upload: () => {
-        return useUploadApi().singleUpload;
-      },
-      login: () => {
-        return useAuthApi().login;
-      },
-      getUserInfo: () => {
-        return useAuthApi().getUserInfo;
-      },
-      changePassword: () => {
-        return useAuthApi().changePassword;
-      },
+      upload: commonApi.upload,
+      login: authApi.login,
+      getUserInfo: authApi.getUserInfo,
+      logout: authApi.logout,
     },
     defineAuthority({ permissions = [] }) {
       const { can, rules } = new AbilityBuilder(createMongoAbility);
@@ -75,8 +67,6 @@ async function bootstrap() {
       },
     },
   });
-
-  app.use(cosey);
 
   addIconifyIcon('carbon', carbonIcons);
 
