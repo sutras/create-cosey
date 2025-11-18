@@ -1,0 +1,18 @@
+import { Ribbon } from 'cosey/components';
+import { defineComponent } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+export const EnvRibbon = defineComponent({
+  setup() {
+    const { t } = useI18n();
+    return () => {
+      return (
+        <div style="width: 47px">
+          <Ribbon size={63} breadth={0.6} background={import.meta.env.VITE_ENV_RIBBON_BG}>
+            {t(import.meta.env.VITE_ENV_RIBBON_NAME)}
+          </Ribbon>
+        </div>
+      );
+    };
+  },
+});

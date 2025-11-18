@@ -15,14 +15,13 @@ import {
 } from '@casl/ability';
 import { ABILITY_TOKEN } from '@casl/vue';
 
-import LayoutLocale from '@/components/layout-locale';
-import { setupI18n, i18n } from '@/locale';
-
 import 'virtual:svg-icons-register';
 import { icons as carbonIcons } from '@iconify-json/carbon';
-import { addIconifyIcon, Ribbon } from 'cosey/components';
+import { addIconifyIcon } from 'cosey/components';
 
-addIconifyIcon('carbon', carbonIcons);
+import { i18nConfig } from '@/locale';
+
+import { EnvRibbon } from '@/components/env-ribbon';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -39,6 +38,7 @@ async function bootstrap() {
     http: {
       baseURL: import.meta.env.VITE_BASE_URL,
     },
+    i18n: i18nConfig,
     site: {
       name: import.meta.env.VITE_APP_TITLE,
       logo: import.meta.env.VITE_APP_LOGO,
@@ -70,28 +70,15 @@ async function bootstrap() {
       return !authority ? true : authority(ability);
     },
     slots: {
-      topbarWidget() {
-        return <LayoutLocale />;
-      },
       topbarRight() {
-        return (
-          <div style="width: 47px">
-            <Ribbon size={63} breadth={0.6} background={import.meta.env.VITE_ENV_RIBBON_BG}>
-              {i18n.global.t(import.meta.env.VITE_ENV_RIBBON_NAME)}
-            </Ribbon>
-          </div>
-        );
+        return <EnvRibbon />;
       },
-      authWidget() {
-        return <LayoutLocale />;
-      },
-    }
+    },
   });
 
   app.use(cosey);
 
-  // 国际化
-  setupI18n(app);
+  addIconifyIcon('carbon', carbonIcons);
 
   // 挂载根组件
   app.mount('#app');
